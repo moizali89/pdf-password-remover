@@ -1,0 +1,16 @@
+server:
+  host: 127.0.0.1
+  port: 5000
+  debug: false
+
+uploads:
+  max_file_size_mb: 500
+  allowed_extensions:
+    - pdf
+
+behavior:
+  passthrough_unencrypted: true
+  output_prefix: "unlocked-"
+
+security:
+  enable_csp: true
