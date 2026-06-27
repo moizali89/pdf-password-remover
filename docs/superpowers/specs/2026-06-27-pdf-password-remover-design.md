@@ -16,7 +16,7 @@ no brute-force/recovery functionality.
 
 - Decrypt a password-protected PDF using the **known** password and return a
   PDF that opens with no password.
-- Polished, iLovePDF-style web UI: drag-and-drop, clear states, prominent
+- Polished, modern web UI: drag-and-drop, clear states, prominent
   download button.
 - Runs entirely **locally and offline**. No uploaded data ever leaves the
   user's computer; no dependency contacts the internet.
@@ -175,7 +175,7 @@ Typed exceptions (e.g. `WrongPassword`, `NotEncrypted`, `InvalidPDF`) live in
 
 ## Frontend / UX
 
-Single page, iLovePDF-inspired, three visual states on one screen:
+Single page, clean and modern, three visual states on one screen:
 
 1. **Idle:** centered card, drag-and-drop zone ("Drop your PDF here or click to
    browse"), password field, "Unlock PDF" button. Selected filename shown once
