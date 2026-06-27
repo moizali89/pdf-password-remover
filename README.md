@@ -11,6 +11,8 @@ no brute-force or recovery of unknown passwords.
 > (localhost) only, nothing is written to disk, and no dependency makes network
 > calls. When enabled, a strict Content-Security-Policy stops the page from
 > contacting anything external.
+>
+> ✈️ **It works completely offline — you can turn off your Wi-Fi and run it.**
 
 ---
 
