@@ -38,22 +38,22 @@ cd pdf-password-remover
 ### macOS / Linux
 
 ```bash
-./run.sh
+./run-mac-linux.sh
 ```
 
 If you get a "permission denied" error, make the script executable first:
 
 ```bash
-chmod +x run.sh
-./run.sh
+chmod +x run-mac-linux.sh
+./run-mac-linux.sh
 ```
 
 ### Windows
 
-Double-click **`run.bat`**, or from a terminal:
+Double-click **`run-windows.bat`**, or from a terminal:
 
 ```bat
-run.bat
+run-windows.bat
 ```
 
 ---
@@ -67,6 +67,15 @@ When it's running, open your browser to:
 
 Drop in a PDF, type the password, and download the unlocked copy. Press
 `Ctrl+C` in the terminal to stop the server.
+
+A couple of helpful touches in the UI:
+
+- **Not password-protected?** The moment you pick a file, the app checks it
+  locally (in your browser) and pops up a notice if the PDF has no password —
+  there's nothing to unlock, so it clears the selection for you.
+- **Loader popup.** While unlocking, a loader popup is shown for at least a
+  short, configurable minimum so the feedback never just flickers (see
+  `ui.min_loader_seconds` below).
 
 ---
 
@@ -92,6 +101,9 @@ behavior:
 
 security:
   enable_csp: true                # send Content-Security-Policy: default-src 'self'
+
+ui:
+  min_loader_seconds: 2           # minimum time the "Unlocking…" loader popup stays visible
 ```
 
 ---
@@ -133,8 +145,8 @@ pdf-password-remover/
 │   ├── css/styles.css
 │   └── js/app.js
 ├── config.yaml           # user-editable configuration
-├── run.sh                # launcher (macOS / Linux)
-├── run.bat               # launcher (Windows)
+├── run-mac-linux.sh      # launcher (macOS / Linux)
+├── run-windows.bat       # launcher (Windows)
 └── README.md
 ```
 
@@ -151,4 +163,11 @@ This is fine for local, single-user use. Lower `max_file_size_mb` in
 
 ## License
 
-Personal use. Provided as-is, without warranty.
+Licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+The software is provided on an **"AS IS" basis, without warranties or conditions
+of any kind**, express or implied. In no event shall the author or any
+contributor be **liable** for any claim, damages, or other liability arising
+from, out of, or in connection with the software or its use. See sections 7
+(Disclaimer of Warranty) and 8 (Limitation of Liability) of the
+[license](https://www.apache.org/licenses/LICENSE-2.0) for the full terms.
