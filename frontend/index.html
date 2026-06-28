@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PDF Password Remover</title>
-  <link rel="stylesheet" href="/css/styles.css?v=2" />
+  <link rel="stylesheet" href="/css/styles.css?v=4" />
 </head>
 <body>
   <div class="page">
@@ -40,12 +40,6 @@
         <p class="error-msg" id="error-msg" hidden></p>
       </div>
 
-      <!-- Working state -->
-      <div id="state-working" hidden>
-        <div class="spinner" aria-label="Unlocking…"></div>
-        <p class="working-label">Unlocking…</p>
-      </div>
-
       <!-- Result state -->
       <div id="state-result" hidden>
         <div class="result-icon">✓</div>
@@ -59,6 +53,27 @@
     <footer class="footer">All processing happens locally — no data leaves your computer.</footer>
   </div>
 
-  <script src="/js/app.js?v=2"></script>
+  <!-- Info modal: shown when a selected PDF has no password -->
+  <div class="modal-overlay" id="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-icon" aria-hidden="true">i</div>
+      <h2 class="modal-title" id="modal-title">No password to remove</h2>
+      <p class="modal-text">
+        This PDF isn’t password-protected, so there’s nothing to unlock —
+        you can already open and use it as-is.
+      </p>
+      <button class="btn-primary" id="modal-close">Got it</button>
+    </div>
+  </div>
+
+  <!-- Loader popup: shown while unlocking (held for a minimum duration) -->
+  <div class="modal-overlay" id="loader-overlay" hidden>
+    <div class="modal loader-modal" role="alertdialog" aria-busy="true" aria-label="Unlocking your PDF">
+      <div class="spinner"></div>
+      <p class="working-label">Unlocking your PDF…</p>
+    </div>
+  </div>
+
+  <script src="/js/app.js?v=5"></script>
 </body>
 </html>

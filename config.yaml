@@ -14,3 +14,6 @@ behavior:
 
 security:
   enable_csp: true
+
+ui:
+  min_loader_seconds: 2   # minimum time the "Unlocking…" loader popup stays visible

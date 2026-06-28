@@ -37,6 +37,11 @@ def js(filename):
     return send_from_directory(os.path.join(FRONTEND_DIR, "js"), filename)
 
 
+@app.route("/api/config")
+def client_config():
+    return jsonify({"min_loader_seconds": CONFIG["ui"]["min_loader_seconds"]})
+
+
 @app.errorhandler(413)
 def too_large(_):
     max_mb = CONFIG["uploads"]["max_file_size_mb"]

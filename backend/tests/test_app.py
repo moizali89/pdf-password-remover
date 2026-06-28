@@ -75,3 +75,10 @@ def test_index_serves_html(client):
     resp = client.get("/")
     assert resp.status_code == 200
     assert b"html" in resp.data.lower()
+
+
+def test_config_endpoint_returns_min_loader_seconds(client):
+    resp = client.get("/api/config")
+    assert resp.status_code == 200
+    assert resp.content_type == "application/json"
+    assert isinstance(resp.json["min_loader_seconds"], (int, float))

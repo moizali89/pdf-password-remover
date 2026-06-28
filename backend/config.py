@@ -6,6 +6,7 @@ DEFAULTS = {
     "uploads": {"max_file_size_mb": 500, "allowed_extensions": ["pdf"]},
     "behavior": {"passthrough_unencrypted": True, "output_prefix": "unlocked-"},
     "security": {"enable_csp": True},
+    "ui": {"min_loader_seconds": 2},
 }
 
 
